@@ -5,6 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App.tsx";
+import { RouteProvider } from "./router.ts";
 
 const element = document.getElementById("root");
 if (element == null) {
@@ -14,9 +15,11 @@ if (element == null) {
 ReactDOM.createRoot(element).render(
   <React.StrictMode>
     <Theme appearance="inherit">
-      <Flex direction="column" align="center" justify="center" display="flex" height="100%">
-        <App />
-      </Flex>
+      <RouteProvider>
+        <Flex direction="column" align="center" justify="center" display="flex" height="100%">
+          <App />
+        </Flex>
+      </RouteProvider>
     </Theme>
   </React.StrictMode>
 );
