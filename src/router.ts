@@ -3,11 +3,11 @@ import { createRouter, defineRoute, param } from "type-route";
 export const { RouteProvider, useRoute, routes } = createRouter({
   home: defineRoute("/"),
 
-  userList: defineRoute(
+  users: defineRoute(
     {
       page: param.query.optional.number
     },
-    () => "/user"
+    () => "/users"
   ),
 
   user: defineRoute(

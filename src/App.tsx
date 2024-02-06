@@ -17,7 +17,7 @@ import { routes, useRoute } from "./router";
 
 const count = signal(0);
 
-function App() {
+export default function App() {
   const route = useRoute();
 
   return (
@@ -35,14 +35,14 @@ function App() {
 
       <Flex direction="row" pb="5" pt="5">
         <a {...routes.home().link}>Home</a>
-        <a {...routes.userList().link}>User List</a>
-        <a {...routes.userList({ page: 2 }).link}>User List Page 2</a>
-        <a {...routes.user({ userId: "abc" }).link}>User abc</a>
+        <a {...routes.users().link}>Users</a>
+        <a {...routes.users({ page: 2 }).link}>Users: page 2</a>
+        <a {...routes.user({ userId: "abc" }).link}>User: abc</a>
       </Flex>
 
       <Flex direction="row">
         {route.name === "home" && <HomePage />}
-        {route.name === "userList" && <UserListPage route={route} />}
+        {route.name === "users" && <UserListPage route={route} />}
         {route.name === "user" && <UserPage route={route} />}
         {route.name === false && "Not Found"}
       </Flex>
@@ -54,16 +54,22 @@ function App() {
   );
 }
 
-export default App;
-
 function HomePage() {
   return <div>Home Page</div>;
 }
 
-function UserListPage({ route }: { route: Route<typeof routes.userList> }) {
+type UserListPageProps = {
+  route: Route<typeof routes.users>;
+};
+
+function UserListPage({ route }: UserListPageProps) {
   return <div>UserList Page: {route.params.page}</div>;
 }
 
-function UserPage({ route }: { route: Route<typeof routes.user> }) {
+type UserPageProps = {
+  route: Route<typeof routes.user>;
+};
+
+function UserPage({ route }: UserPageProps) {
   return <div>User: {route.params.userId}</div>;
 }

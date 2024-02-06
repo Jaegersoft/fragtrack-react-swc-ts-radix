@@ -6,6 +6,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:prettier/recommended",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:jsx-a11y/recommended",
@@ -16,12 +17,6 @@
   "settings": {
     "react": {
       "version": "detect"
-    },
-    "import/resolver": {
-      "node": {
-        "paths": ["src"],
-        "extensions": [".ts", ".tsx"]
-      }
     }
   },
   "ignorePatterns": ["dist", ".eslintrc.cjs"],
@@ -36,11 +31,19 @@
   },
   "plugins": ["simple-import-sort", "prettier", "react-refresh"],
   "rules": {
-    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "@typescript-eslint/explicit-function-return-type": [
+      "off",
+      {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true,
+        "allowHigherOrderFunctions": true
+      }
+    ],
     "curly": ["error", "multi-line", "consistent"],
     "no-unused-vars": "warn",
-    "prettier/prettier": ["error", {}, {"usePrettierrc": true}],
-    "react-refresh/only-export-components": ["warn", {"allowConstantExport": true}],
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error"
   }
