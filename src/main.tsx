@@ -5,7 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 import App from "./App.tsx";
-import { RouteProvider } from "./router.ts";
+import { RouteProvider } from "./router/routes.ts";
 
 const element = document.getElementById("root");
 if (element == null) {

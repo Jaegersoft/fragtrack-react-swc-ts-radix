@@ -1,4 +1,4 @@
-import { createRouter, defineRoute, param } from "type-route";
+import { createRouter, defineRoute, param, Route } from "type-route";
 
 export const { RouteProvider, useRoute, routes } = createRouter({
   home: defineRoute("/"),
@@ -17,3 +17,9 @@ export const { RouteProvider, useRoute, routes } = createRouter({
     (p) => `/user/${p.userId}`
   )
 });
+
+export type HomeRoute = Route<typeof routes.home>;
+
+export type UsersRoute = Route<typeof routes.users>;
+
+export type UserRoute = Route<typeof routes.user>;
