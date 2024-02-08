@@ -1,6 +1,7 @@
-import { HomePage } from "../home/HomePage";
-import { UserListPage } from "../user/UserListPage";
-import { UserPage } from "../user/UserPage";
+import { HomePage } from "@/home/HomePage";
+import { UserListPage } from "@/user/UserListPage";
+import { UserPage } from "@/user/UserPage";
+
 import { useRoute } from "./routes";
 
 export function RouteContent() {

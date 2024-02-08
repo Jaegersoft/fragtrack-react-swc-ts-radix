@@ -1,4 +1,4 @@
-import { UserRoute } from "../router/routes";
+import { UserRoute } from "@/router/routes";
 
 type UserPageProps = {
   route: UserRoute;

@@ -3,10 +3,11 @@ import "./index.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import { RouteProvider } from "@/router/routes.ts";
+import { ThemeProvider } from "@/theme/ThemeProvider.tsx";
+import { ThemeToggle } from "@/theme/ThemeToggle.tsx";
+
 import App from "./App.tsx";
-import { RouteProvider } from "./router/routes.ts";
-import { ThemeProvider } from "./theme/ThemeProvider.tsx";
-import { ThemeToggle } from "./theme/ThemeToggle.tsx";
 
 const element = document.getElementById("root");
 if (element == null) {

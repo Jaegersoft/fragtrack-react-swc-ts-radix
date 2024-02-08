@@ -10,9 +10,8 @@ import swcLogo from "/assets/swc.svg";
 import typeRouteLogo from "/assets/type-route.svg";
 import viteLogo from "/assets/vite.svg";
 import { Button } from "@/components/ui/button";
-
-import { RouteContent } from "./router/RouteContent";
-import { RouteLinks } from "./router/RouteLinks";
+import { RouteContent } from "@/router/RouteContent";
+import { RouteLinks } from "@/router/RouteLinks";
 
 const count = signal(0);
 
