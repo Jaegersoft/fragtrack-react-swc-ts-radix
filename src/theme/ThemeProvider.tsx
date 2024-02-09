@@ -25,11 +25,10 @@ const root = window.document.documentElement;
 const theme = signal<Theme>(defaultTheme);
 
 function setTheme(key: string, value: Theme) {
-  theme.value = value;
-
   root.classList.remove("light", "dark");
   localStorage.setItem(key, value);
 
+  theme.value = value;
   if (value === "system") {
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     root.classList.add(systemTheme);
@@ -39,7 +38,7 @@ function setTheme(key: string, value: Theme) {
   root.classList.add(value);
 }
 
-export function ThemeProvider({ children, storageKey = "ui-theme", ...props }: ThemeProviderProps) {
+export function ThemeProvider({ children, storageKey = "ui-theme" }: ThemeProviderProps) {
   const storedTheme = localStorage.getItem(storageKey) ?? defaultTheme;
   setTheme(storageKey, storedTheme as Theme);
 
@@ -50,9 +49,5 @@ export function ThemeProvider({ children, storageKey = "ui-theme", ...props }: T
     }
   };
 
-  return (
-    <ThemeProviderContext.Provider {...props} value={value}>
-      {children}
-    </ThemeProviderContext.Provider>
-  );
+  return <ThemeProviderContext.Provider value={value}>{children}</ThemeProviderContext.Provider>;
 }

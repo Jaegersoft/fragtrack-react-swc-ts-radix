@@ -1,4 +1,5 @@
-import { signal } from "@preact/signals-react";
+import { useSignal } from "@preact/signals-react";
+import { from } from "linq-to-typescript";
 
 import eslintLogo from "/assets/eslint.svg";
 import preactLogo from "/assets/preact.svg";
@@ -13,21 +14,59 @@ import { Button } from "@/components/ui/button";
 import { RouteContent } from "@/router/RouteContent";
 import { RouteLinks } from "@/router/RouteLinks";
 
-const count = signal(0);
+type Image = {
+  src: string;
+  title: string;
+};
+
+const data: Image[] = [
+  {
+    title: "Vite",
+    src: viteLogo
+  },
+  {
+    title: "SWC",
+    src: swcLogo
+  },
+  {
+    title: "React",
+    src: reactLogo
+  },
+  {
+    title: "Preact",
+    src: preactLogo
+  },
+  {
+    title: "Prettier",
+    src: prettierLogo
+  },
+  {
+    title: "ESLint",
+    src: eslintLogo
+  },
+  {
+    title: "Radix-UI",
+    src: radixUiLogo
+  },
+  {
+    title: "shadcn/ui",
+    src: shadCnLogo
+  },
+  {
+    title: "Type Route",
+    src: typeRouteLogo
+  }
+];
 
 export default function App() {
+  const count = useSignal(0);
+
   return (
     <>
       <div className="flex w-full justify-center mt-4 mb-4">
-        <img src={viteLogo} className="w-12 h-12 ml-2 mr-2" alt="Vite logo" title="Vite" />
-        <img src={swcLogo} className="w-12 h-12 ml-2 mr-2" alt="SWC logo" title="SWC" />
-        <img src={reactLogo} className="w-12 h-12 ml-2 mr-2" alt="React logo" title="React" />
-        <img src={preactLogo} className="w-12 h-12 ml-2 mr-2" alt="Preact logo" title="Preact Signals" />
-        <img src={prettierLogo} className="w-12 h-12 ml-2 mr-2" alt="Prettier logo" title="Prettier" />
-        <img src={eslintLogo} className="w-12 h-12 ml-2 mr-2" alt="ESLint logo" title="ESLint" />
-        <img src={radixUiLogo} className="w-12 h-12 ml-2 mr-2" alt="Radix UI logo" title="Radix UI" />
-        <img src={shadCnLogo} className="w-12 h-12 ml-2 mr-2" alt="ShadCn UI logo" title="shadcn/ui" />
-        <img src={typeRouteLogo} className="w-12 h-12 ml-2 mr-2" alt="Type Route logo" title="Type Route" />
+        {from(data).select(({ src, title }) => (
+          <img src={src} className="w-12 h-12 ml-2 mr-2" alt={`${title} logo`} title={title} />
+        ))}
       </div>
 
       <div className="flex w-full justify-center mt-4 mb-4">
