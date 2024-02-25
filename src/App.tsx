@@ -64,8 +64,8 @@ export default function App() {
   return (
     <>
       <div className="flex w-full justify-center mt-4 mb-4">
-        {from(data).select(({ src, title }) => (
-          <img src={src} className="w-12 h-12 ml-2 mr-2" alt={`${title} logo`} title={title} />
+        {from(data).select(({ src, title }, idx) => (
+          <img key={idx} src={src} className="w-12 h-12 ml-2 mr-2" alt={`${title} logo`} title={title} />
         ))}
       </div>
 
