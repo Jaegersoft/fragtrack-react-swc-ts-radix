@@ -40,10 +40,16 @@
         "allowHigherOrderFunctions": true
       }
     ],
+    "@typescript-eslint/comma-dangle": "error",
+    "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unnecessary-condition": "warn",
-    "curly": ["error", "multi-line", "consistent"],
-    "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "comma-dangle": "off",
+    "curly": ["error", "multi-line", "consistent"],
+    "func-style": ["error", "declaration"],
+    "no-alert": "error",
+    "no-console": "error",
+    "no-unused-vars": "off",
     "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
     "react-refresh/only-export-components": ["warn", { "allowConstantExport": true }],
     "simple-import-sort/imports": "error",
