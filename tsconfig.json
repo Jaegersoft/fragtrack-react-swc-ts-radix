@@ -19,7 +19,10 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      /* Aliases */
+      "@/*": ["./src/*"],
+      "@features/*": ["./src/features/*"],
+      "@counter/*": ["./src/features/counter/*"]
     }
   },
   "include": ["src"],

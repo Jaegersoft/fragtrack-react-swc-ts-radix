@@ -1,4 +1,5 @@
-import { useSignal } from "@preact/signals-react";
+import { CounterButton } from "@counter/CounterButton";
+import CounterDisplay from "@counter/CounterDisplay";
 import { from } from "linq-to-typescript";
 
 import eslintLogo from "/assets/eslint.svg";
@@ -10,9 +11,8 @@ import shadCnLogo from "/assets/shadcn-ui.svg";
 import swcLogo from "/assets/swc.svg";
 import typeRouteLogo from "/assets/type-route.svg";
 import viteLogo from "/assets/vite.svg";
-import { Button } from "@/components/ui/button";
-import { RouteContent } from "@/router/RouteContent";
-import { RouteLinks } from "@/router/RouteLinks";
+import { RouteContent } from "@/routing/RouteContent";
+import { RouteLinks } from "@/routing/RouteLinks";
 
 type Image = {
   src: string;
@@ -59,8 +59,6 @@ const data: Image[] = [
 ];
 
 export default function App() {
-  const count = useSignal(0);
-
   return (
     <>
       <div className="flex w-full justify-center mt-4 mb-4">
@@ -77,10 +75,10 @@ export default function App() {
         <RouteLinks />
       </div>
 
-      <div className="flex w-full justify-center  mt-4 mb-4">
-        <Button variant="destructive" onClick={() => (count.value += 1)}>
-          count is {count}
-        </Button>
+      {/* Trivial demonstration of shared state with preact signals + context */}
+      <div className="flex flex-col justify-center items-center mt-4 mb-4">
+        <CounterButton />
+        <CounterDisplay />
       </div>
     </>
   );

@@ -1,6 +1,6 @@
-import { HomePage } from "@/home/HomePage";
-import { UserListPage } from "@/user/UserListPage";
-import { UserPage } from "@/user/UserPage";
+import { HomePage } from "@/features/home/HomePage";
+import { UserListPage } from "@/features/user/UserListPage";
+import { UserPage } from "@/features/user/UserPage";
 
 import { useRoute } from "./routes";
 

@@ -1,4 +1,4 @@
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/features/shared/components/Button";
 
 import { routes } from "./routes";
 
