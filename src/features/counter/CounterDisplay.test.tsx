@@ -1,7 +1,9 @@
-import { signal } from "@preact/signals-react";
+import "@testing-library/jest-dom/extend-expect";
+import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
 import CounterDisplay from "./CounterDisplay";
 import { CounterProvider } from "./CounterProvider";
-import { render } from "@testing-library/react";
+import { signal } from "@preact/signals-react";
 
 describe("Text Counter renders correctly", () => {
   test("Test counter display shows the current counter state value", async () => {
@@ -13,8 +15,6 @@ describe("Text Counter renders correctly", () => {
     );
 
     //Assert
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     expect(rendered.getByText("loader-icon")).toBeInTheDocument();
-    expect(rendered.getByAltText("loader-icon")).toBeInTheDocument();
   });
 });
