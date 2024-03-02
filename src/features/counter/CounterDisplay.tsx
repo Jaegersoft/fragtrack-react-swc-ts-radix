@@ -2,7 +2,7 @@ import { useContext } from "react";
 
 import { CounterProviderContext } from "./CounterProvider";
 
-function CounterDisplay() {
+export function CounterDisplay() {
   const { counter, counterSquared } = useContext(CounterProviderContext);
 
   return (
@@ -12,5 +12,3 @@ function CounterDisplay() {
     </>
   );
 }
-
-export default CounterDisplay;

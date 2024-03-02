@@ -1,5 +1,5 @@
 import { CounterButton } from "@counter/CounterButton";
-import CounterDisplay from "@counter/CounterDisplay";
+import { CounterDisplay } from "@counter/CounterDisplay";
 import { from } from "linq-to-typescript";
 
 import eslintLogo from "/assets/eslint.svg";
@@ -58,7 +58,9 @@ const data: Image[] = [
   }
 ];
 
-export default function App() {
+const test = 5;
+
+export function App() {
   return (
     <>
       <div className="flex w-full justify-center mt-4 mb-4">

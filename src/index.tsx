@@ -8,13 +8,14 @@ import { ThemeProvider } from "@/features/shared/theme/ThemeProvider.tsx";
 import { ThemeToggle } from "@/features/shared/theme/ThemeToggle.tsx";
 import { RouteProvider } from "@/routing/routes.ts";
 
-import App from "./App.tsx";
+import { App } from "./App.tsx";
 
 const element = document.getElementById("root");
 if (element == null) {
   throw new Error("Root element not found.");
 }
 
+// eslint-disable-next-line import/no-named-as-default-member
 ReactDOM.createRoot(element).render(
   <React.StrictMode>
     <RouteProvider>

@@ -44,8 +44,8 @@ export function ThemeProvider({ children, storageKey = "ui-theme" }: ThemeProvid
 
   const value = {
     theme: theme.value,
-    setTheme: (value: Theme) => {
-      setTheme(storageKey, value);
+    setTheme: (themeValue: Theme) => {
+      setTheme(storageKey, themeValue);
     }
   };
 
