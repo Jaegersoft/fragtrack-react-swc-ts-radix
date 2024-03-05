@@ -26,7 +26,7 @@ fds
 
 
 ## Code Style Guidelines
-For information on project coding standards, see the [Code Style Guidelines](CODE_STYLE.md).
+For information on project coding standards, see the [Code Style Guidelines](CODESTYLE.md).
 
 
 ## Technology Stack
