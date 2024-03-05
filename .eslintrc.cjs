@@ -26,7 +26,7 @@ module.exports = {
       typescript: {} // This will make ESLint use tsconfig.json for path resolution
     }
   },
-  ignorePatterns: ["dist", ".eslintrc.cjs", "*.config.js"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", "*.config.*js"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest", // Consider aligning this with your env version
@@ -121,6 +121,12 @@ module.exports = {
       rules: {
         "@typescript-eslint/no-misused-promises": "off", // Disable this rule for specified files
         "@typescript-eslint/require-await": "off" // Disable this rule for specified files
+      }
+    },
+    {
+      files: ["*.test.ts", "*.test.tsx", "**/__tests__/*"],
+      rules: {
+        "@typescript-eslint/no-unsafe-call": "off"
       }
     }
   ]

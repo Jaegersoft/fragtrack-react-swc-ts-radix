@@ -1,9 +1,26 @@
 var esmModules = ["@preact", "@preact/signals-react"];
 
 module.exports = {
-  preset: "ts-jest",
+  transform: {
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        jsc: {
+          parser: {
+            syntax: "typescript",
+            tsx: true
+          },
+          transform: {
+            react: {
+              runtime: "automatic"
+            }
+          }
+        }
+      }
+    ]
+  },
+  testPathIgnorePatterns: ["/e2e/"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   testEnvironment: "jsdom",
-  // transformIgnorePatterns: ["!node_modules/"],
-  transform: { "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest" },
-  transformIgnorePatterns: [`node_modules/(?!(?:.pnpm/)?(${esmModules.join("|")}))`] // moduleNameMapper: {
+  transformIgnorePatterns: [`node_modules/(?!(?:.pnpm/)?(${esmModules.join("|")}))`]
 };
