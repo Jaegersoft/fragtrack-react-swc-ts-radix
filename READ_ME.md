@@ -4,7 +4,7 @@ This project contains is a modern refresh of the existing analytics and monitori
 
 ## Prerequisites
 Ensure you have the following installed before starting:
-
+fds
 - [Node.js v20](https://nodejs.org/en/) for the runtime environment.
 - A code editor. We recommend [Visual Studio Code](https://code.visualstudio.com/download) for its extensive support and integrations.
 - Essential Visual Studio Code Extensions for an enhanced development experience:
