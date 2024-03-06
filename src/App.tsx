@@ -1,8 +1,6 @@
 import { Box, Stack } from "@mui/material";
 import { from } from "linq-to-typescript";
 
-import { RouteContent } from "@/routing/RouteContent";
-import { RouteLinks } from "@/routing/RouteLinks";
 import eslintLogo from "/assets/eslint.svg";
 import preactLogo from "/assets/preact.svg";
 import prettierLogo from "/assets/prettier.svg";
@@ -10,6 +8,8 @@ import reactLogo from "/assets/react.svg";
 import swcLogo from "/assets/swc.svg";
 import typeRouteLogo from "/assets/type-route.svg";
 import viteLogo from "/assets/vite.svg";
+import { RouteContent } from "@/routing/RouteContent";
+import { RouteLinks } from "@/routing/RouteLinks";
 
 type Image = {
   src: string;

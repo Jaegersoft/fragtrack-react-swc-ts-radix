@@ -29,12 +29,12 @@ module.exports = {
   ignorePatterns: ["dist", ".eslintrc.cjs", "*.config.*js"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: "latest", // Consider aligning this with your env version
+    ecmaVersion: "es2020",
     sourceType: "module",
     ecmaFeatures: {
       jsx: true
     },
-    project: ["./tsconfig.json", "./tsconfig.node.json"] // Ensure these paths are correct
+    project: ["./tsconfig.json", "./tsconfig.node.json"]
   },
   plugins: ["simple-import-sort", "prettier", "react-refresh", "react", "@typescript-eslint", "promise", "import"],
 
@@ -70,9 +70,8 @@ module.exports = {
         functions: true,
         classes: true,
         variables: true,
-        enums: false, // Turn off the rule for enums
-        typedefs: false, // This option is not valid and should be removed
-        ignoreTypeReferences: true // Correctly ignore type references
+        enums: false,
+        ignoreTypeReferences: true
       }
     ],
     "no-useless-constructor": "error",

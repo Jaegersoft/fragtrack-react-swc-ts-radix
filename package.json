@@ -8,7 +8,8 @@
     "build": "tsc && vite build",
     "test:unit": "jest",
     "test:e2e": "playwright test",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --fix --max-warnings 0",
+    "lint": "eslint . --ext ts,tsx --color -f table --quiet",
+    "lint:fix": "eslint . --ext ts,tsx --report-unused-disable-directives --fix --max-warnings 0",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{ts,tsx,css,md,json}\" ",
     "preview": "vite preview"
   },

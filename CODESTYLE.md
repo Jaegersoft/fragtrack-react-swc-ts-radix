@@ -53,6 +53,7 @@ This document outlines the coding conventions and best practices for this projec
 4. **Data Adapter pattern for API responses** - Use libraries like yup or zod for validation.
 
 ## Additional Considerations
+
 - Instrument all actions with Application Insights for performance monitoring.
 - Ensure code passes Snyk CVE and code scans for security.
 - Use `knip` as package script for consistency.
