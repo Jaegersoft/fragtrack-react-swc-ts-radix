@@ -1,3 +1,5 @@
+import "@testing-library/jest-dom/extend-expect";
+
 import { signal } from "@preact/signals-react";
 import { render } from "@testing-library/react";
 

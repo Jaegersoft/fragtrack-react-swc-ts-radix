@@ -28,7 +28,6 @@ fds
 ## Code Style Guidelines
 For information on project coding standards, see the [Code Style Guidelines](CODESTYLE.md).
 
-
 ## Technology Stack
 - **React**: A JavaScript library for building user interfaces.
 - **TypeScript**: A strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.
@@ -63,16 +62,7 @@ The project testing approach should balance quality with efficiency, using Jest 
 We adopt a pragmatic testing methodology, focusing on crucial areas for maximum impact. This dual-layered testing ensures core logic accuracy and overall application functionality, maintaining development velocity and release confidence.
 
 ## TODO
-- Json Server Test
-- Non trivial Preact signals demonstration
-- Layout using Radix with styling
-- Playwright and Jest test examples
 - Services example
 - Code must pass a Snyk CVE scan and Snyk code scan
 - Use knip as package script
 - Add ref to code style guide, getting started, etc/
-
-
-
-
-# Getting Started

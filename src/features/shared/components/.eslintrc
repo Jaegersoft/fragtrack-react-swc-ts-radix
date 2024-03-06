@@ -1,8 +1,0 @@
-{
-  "root": false,
-  "rules": {
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "react-refresh/only-export-components": "off",
-    "react/prop-types": "off"
-  }
-}

@@ -1,18 +1,15 @@
-import { CounterButton } from "@counter/CounterButton";
-import { CounterDisplay } from "@counter/CounterDisplay";
+import { Box, Stack } from "@mui/material";
 import { from } from "linq-to-typescript";
 
+import { RouteContent } from "@/routing/RouteContent";
+import { RouteLinks } from "@/routing/RouteLinks";
 import eslintLogo from "/assets/eslint.svg";
 import preactLogo from "/assets/preact.svg";
 import prettierLogo from "/assets/prettier.svg";
-import radixUiLogo from "/assets/radix-ui.svg";
 import reactLogo from "/assets/react.svg";
-import shadCnLogo from "/assets/shadcn-ui.svg";
 import swcLogo from "/assets/swc.svg";
 import typeRouteLogo from "/assets/type-route.svg";
 import viteLogo from "/assets/vite.svg";
-import { RouteContent } from "@/routing/RouteContent";
-import { RouteLinks } from "@/routing/RouteLinks";
 
 type Image = {
   src: string;
@@ -45,43 +42,37 @@ const data: Image[] = [
     src: eslintLogo
   },
   {
-    title: "Radix-UI",
-    src: radixUiLogo
-  },
-  {
-    title: "shadcn/ui",
-    src: shadCnLogo
-  },
-  {
     title: "Type Route",
     src: typeRouteLogo
   }
 ];
 
-const test = 5;
-
 export function App() {
   return (
-    <>
-      <div className="flex w-full justify-center mt-4 mb-4">
+    <Stack height="100vh" direction="column" alignItems="center" justifyContent="start">
+      {/* For horizontally aligned items with space around them */}
+      <Box sx={{ display: "flex", justifyContent: "start", mt: 2, mb: 2 }}>
         {from(data).select(({ src, title }, idx) => (
-          <img key={idx} src={src} className="w-12 h-12 ml-2 mr-2" alt={`${title} logo`} title={title} />
+          <Box
+            component="img"
+            key={idx}
+            src={src}
+            sx={{ width: 48, height: 48, ml: 1, mr: 1 }}
+            alt={`${title} logo`}
+            title={title}
+          />
         ))}
-      </div>
+      </Box>
 
-      <div className="flex w-full justify-center mt-4 mb-4">
-        <RouteContent />
-      </div>
-
-      <div className="flex w-full justify-center mt-4 mb-4">
+      {/* For RouteLinks - assuming it's a component rendering navigation links */}
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 2, mb: 2 }}>
         <RouteLinks />
-      </div>
+      </Box>
 
-      {/* Trivial demonstration of shared state with preact signals + context */}
-      <div className="flex flex-col justify-center items-center mt-4 mb-4">
-        <CounterButton />
-        <CounterDisplay />
-      </div>
-    </>
+      {/* For RouteContent - assuming it's a component rendering route-specific content */}
+      <Box sx={{ display: "flex", justifyContent: "center", mt: 2, mb: 2 }}>
+        <RouteContent />
+      </Box>
+    </Stack>
   );
 }

@@ -1,25 +1,6 @@
-import { createRouter, defineRoute, param, Route } from "type-route";
+import { createRouter, defineRoute } from "type-route";
 
 export const { RouteProvider, useRoute, routes } = createRouter({
   home: defineRoute("/"),
-
-  users: defineRoute(
-    {
-      page: param.query.optional.number
-    },
-    () => "/users"
-  ),
-
-  user: defineRoute(
-    {
-      userId: param.path.string
-    },
-    (p) => `/user/${p.userId}`
-  )
+  counter: defineRoute("/counter")
 });
-
-export type HomeRoute = Route<typeof routes.home>;
-
-export type UsersRoute = Route<typeof routes.users>;
-
-export type UserRoute = Route<typeof routes.user>;

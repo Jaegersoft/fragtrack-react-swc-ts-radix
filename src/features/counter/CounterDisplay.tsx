@@ -1,9 +1,7 @@
-import { useContext } from "react";
-
-import { CounterProviderContext } from "./CounterProvider";
+import { useCounter } from "./useCounter";
 
 export function CounterDisplay() {
-  const { counter, counterSquared } = useContext(CounterProviderContext);
+  const { counter, counterSquared } = useCounter();
 
   return (
     <>

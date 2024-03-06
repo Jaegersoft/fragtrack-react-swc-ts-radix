@@ -1,13 +1,12 @@
-import { useContext } from "react";
+import { Button } from "@mui/material";
 
-import { Button } from "../shared/components/Button";
-import { CounterProviderContext } from "./CounterProvider";
+import { useCounter } from "./useCounter";
 
 export function CounterButton() {
-  const { counter } = useContext(CounterProviderContext);
+  const { counter } = useCounter();
 
   return (
-    <Button variant="destructive" onClick={() => (counter.value += 1)}>
+    <Button variant="contained" onClick={() => (counter.value += 1)}>
       Increase the Count
     </Button>
   );

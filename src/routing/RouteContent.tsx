@@ -1,6 +1,5 @@
+import { CounterPage } from "@/features/counter/CounterPage";
 import { HomePage } from "@/features/home/HomePage";
-import { UserListPage } from "@/features/user/UserListPage";
-import { UserPage } from "@/features/user/UserPage";
 
 import { useRoute } from "./routes";
 
@@ -10,8 +9,7 @@ export function RouteContent() {
   return (
     <>
       {route.name === "home" && <HomePage />}
-      {route.name === "users" && <UserListPage route={route} />}
-      {route.name === "user" && <UserPage route={route} />}
+      {route.name === "counter" && <CounterPage />}
       {route.name === false && "Not Found"}
     </>
   );

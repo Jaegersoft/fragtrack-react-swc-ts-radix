@@ -53,8 +53,8 @@ This document outlines the coding conventions and best practices for this projec
 4. **Data Adapter pattern for API responses** - Use libraries like yup or zod for validation.
 
 ## Additional Considerations
-
 - Instrument all actions with Application Insights for performance monitoring.
 - Ensure code passes Snyk CVE and code scans for security.
 - Use `knip` as package script for consistency.
 - Site must gracefully degrade for small screens and score 90+ in Lighthouse desktop assessments.
+- Commit messages should conform to [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#specification).

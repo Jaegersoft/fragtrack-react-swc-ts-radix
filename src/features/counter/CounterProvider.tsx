@@ -1,5 +1,5 @@
 import { computed, Signal, signal } from "@preact/signals-react";
-import { Context, createContext, ReactNode } from "react";
+import { createContext, ReactNode } from "react";
 
 type CounterProviderProps = {
   children: ReactNode;
@@ -18,9 +18,7 @@ function createDefaultCounterState(): CounterProviderState {
   return { counter, counterSquared };
 }
 
-export const CounterProviderContext = createContext<CounterProviderState | undefined>(
-  undefined
-) as Context<CounterProviderState>;
+export const CounterProviderContext = createContext<CounterProviderState | null>(null);
 
 export function CounterProvider({ children, state }: CounterProviderProps) {
   const intialState = state ?? createDefaultCounterState();

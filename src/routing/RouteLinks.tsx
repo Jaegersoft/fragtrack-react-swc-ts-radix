@@ -1,22 +1,27 @@
-import { buttonVariants } from "@/features/shared/components/Button";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
+import { SyntheticEvent } from "react";
+import { Route } from "type-route";
 
-import { routes } from "./routes";
+import { routes, useRoute } from "./routes"; // Adjust the import path to your routes configuration
+
+const tabOptions = {
+  home: routes.home(),
+  counter: routes.counter()
+} as Record<keyof typeof routes, Route<typeof routes>>;
 
 export function RouteLinks() {
+  const { name } = useRoute();
+
+  function handleChange(_event: SyntheticEvent, value: keyof typeof tabOptions): void {
+    tabOptions[value].push();
+  }
+
   return (
-    <>
-      <a className={`${buttonVariants({ variant: "default" })} mr-2 ml-2`} {...routes.home().link}>
-        Home
-      </a>
-      <a className={`${buttonVariants({ variant: "secondary" })} mr-2 ml-2`} {...routes.users().link}>
-        Users
-      </a>
-      <a className={`${buttonVariants({ variant: "outline" })} mr-2 ml-2`} {...routes.users({ page: 2 }).link}>
-        Users: page 2
-      </a>
-      <a className={`${buttonVariants({ variant: "ghost" })} mr-2 ml-2`} {...routes.user({ userId: "abc" }).link}>
-        User: abc
-      </a>
-    </>
+    <Tabs value={name} onChange={handleChange} centered>
+      {Object.values(tabOptions).map((option, idx) => {
+        return <Tab key={idx} value={option.name} label={option.name} />;
+      })}
+    </Tabs>
   );
 }
