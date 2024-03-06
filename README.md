@@ -7,7 +7,6 @@ This project contains is a modern refresh of the existing analytics and monitori
 ## Prerequisites
 
 Ensure you have the following installed before starting:
-fds
 
 - [Node.js v20](https://nodejs.org/en/) for the runtime environment.
 - A code editor. We recommend [Visual Studio Code](https://code.visualstudio.com/download) for its extensive support and integrations.
@@ -62,14 +61,3 @@ The project testing approach should balance quality with efficiency, using Jest 
 - **Focus**: Target high-risk functionalities and critical user paths.
 - **Execution**: Run with `pnpm run test:e2e`.
 - **Purpose**: Ensure overall application integrity and catch regressions, simulating real user interactions.
-
-### Approach
-
-We adopt a pragmatic testing methodology, focusing on crucial areas for maximum impact. This dual-layered testing ensures core logic accuracy and overall application functionality, maintaining development velocity and release confidence.
-
-## TODO
-
-- Services example
-- Code must pass a Snyk CVE scan and Snyk code scan
-- Use knip as package script
-- Add ref to code style guide, getting started, etc/

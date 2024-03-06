@@ -1,4 +1,4 @@
-import { computed, Signal, signal } from "@preact/signals-react";
+import { computed, ReadonlySignal, Signal, signal } from "@preact/signals-react";
 import { createContext, ReactNode } from "react";
 
 type CounterProviderProps = {
@@ -8,7 +8,7 @@ type CounterProviderProps = {
 
 type CounterProviderState = {
   counter: Signal<number>;
-  counterSquared: Signal<number>;
+  counterSquared: ReadonlySignal<number>;
 };
 
 function createDefaultCounterState(): CounterProviderState {

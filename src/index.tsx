@@ -19,7 +19,7 @@ if (element == null) {
 ReactDOM.createRoot(element).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline /> {/* Adds Material UI's CSS baseline */}
+      <CssBaseline />
       <RouteProvider>
         <CounterProvider>
           <App />

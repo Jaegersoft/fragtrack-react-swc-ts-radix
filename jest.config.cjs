@@ -19,7 +19,7 @@ module.exports = {
       }
     ]
   },
-  testPathIgnorePatterns: ["/e2e/"],
+  testPathIgnorePatterns: ["/e2e/"], //Run end to end tests with playwright test runner
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   testEnvironment: "jsdom",
   transformIgnorePatterns: [`node_modules/(?!(?:.pnpm/)?(${esmModules.join("|")}))`]
